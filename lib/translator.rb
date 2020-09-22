@@ -1,6 +1,7 @@
 # require modules here
 require "yaml"
 require 'pry'
+<<<<<<< HEAD
 
 def load_library(yml)
   flex = YAML.load_file(yml) 
@@ -34,3 +35,42 @@ end
   return "Sorry, that emoticon was not found"
 end
  get_english_meaning("./lib/emoticons.yml", "(＾ｖ＾)")
+=======
+
+
+
+def load_library
+flex = YAML.load_file("./lib/emoticons.yml") 
+# newHash = {"emotion" => {:english,:japanese}, "emoticon" => {} }
+
+
+flex.each_with_object({}) do |(key, value), i|
+  i[key] = key
+  i[key][:english] = value[0]
+  i[key][:japanese] = value[1]
+  binding.pry
+   end
+
+
+  end
+  load_library
+  
+
+
+
+
+# def get_japanese_emoticon
+#   # code goes here
+# end
+
+# def get_english_meaning
+  
+#   flexyml = YAML.load_file(yml)
+  
+#   flexyml.each do |key, value|
+#     if value[1] == emo
+#       return key
+#   end
+  
+# end
+>>>>>>> 3df8265ca232ab940b8119f4ed45f0e722412f32
